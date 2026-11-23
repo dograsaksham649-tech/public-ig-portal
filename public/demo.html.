@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Awareness Demo</title>
+<style>
+body {
+  margin: 0;
+  background: #fafafa;
+  font-family: Arial, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 35px;
+  width: 290px;
+  text-align: center;
+}
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin: 7px 0;
+}
+input { border: 1px solid #ddd; }
+button {
+  background: #3867e8;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.notice {
+  color: #b42318;
+  font-size: 14px;
+  margin-top: 18px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h2>PhotoShare</h2>
+  <p>Security Awareness Training Demo</p>
+
+  <form id="demo">
+    <input placeholder="Dummy username" autocomplete="off">
+    <input type="password" placeholder="Dummy password"
+           autocomplete="off">
+    <button type="submit">Test demo</button>
+  </form>
+
+  <p id="result" class="notice"></p>
+</div>
+
+<script>
+document.getElementById("demo").addEventListener("submit", function(e) {
+  e.preventDefault();
+  this.reset();
+  document.getElementById("result").textContent =
+    "Training demo: Never enter your real password on an unverified website.";
+});
+</script>
+</body>
+</html>
